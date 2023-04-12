@@ -5,11 +5,6 @@
 const char* ssid = "StatusLight";  // Enter SSID here
 const char* password = "88888888";  //Enter Password here
 
-/* Put IP Address details */
-IPAddress local_ip(192,168,1,1);
-IPAddress gateway(192,168,1,1);
-IPAddress subnet(255,255,255,0);
-
 ESP8266WebServer server(80);
 
 uint8_t LED1pin = D1;
@@ -28,7 +23,6 @@ void setup() {
   pinMode(LED3pin, OUTPUT);
   uint8 mode = 0;
   WiFi.softAP(ssid, password);
-  WiFi.softAPConfig(local_ip, gateway, subnet);
   delay(100);
   WiFi.printDiag(Serial);
   
